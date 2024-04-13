@@ -1,16 +1,16 @@
 {
-  "name": "e-shop-tutorial",
+  "name": "at-doorz",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "engines": {
-    "node": "18.x"
+    "node": "20.10.0"
   },
   "scripts": {
     "dev": "nodemon server.js",
     "start": "node server.js"
   },
-  "author": "shahriar Sajeeb",
+  "author": "Muhammad Abubakar Siddique, Naila Shafique, Saud Ahmad",
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^5.1.0",
