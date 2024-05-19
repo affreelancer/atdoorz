@@ -1,7 +1,7 @@
 const express = require("express");
 const User = require("../model/user");
 const router = express.Router();
-const cloudinary = require("cloudinary");
+const cloudinary = require("cloudinary").v2;
 const ErrorHandler = require("../utils/ErrorHandler");
 const catchAsyncErrors = require("../middleware/catchAsyncErrors");
 const jwt = require("jsonwebtoken");
@@ -18,8 +18,10 @@ router.post("/create-user", async (req, res, next) => {
     if (userEmail) {
       return next(new ErrorHandler("User already exists", 400));
     }
-
-    const myCloud = await cloudinary.v2.uploader.upload(avatar, {
+    // cloudinary.uploader
+    // .upload(avatar)
+    // .then(result=>console.log(result));
+    const myCloud = await cloudinary.uploader.upload(avatar, {
       folder: "avatars",
     });
 
@@ -35,7 +37,7 @@ router.post("/create-user", async (req, res, next) => {
 
     const activationToken = createActivationToken(user);
 
-    const activationUrl = `http://localhost/3000/activation/${activationToken}`;
+    const activationUrl = `http://localhost:3000/activation/${activationToken}`;
 
     try {
       await sendMail({

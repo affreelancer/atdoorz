@@ -5,7 +5,7 @@ const router = express.Router();
 const Product = require("../model/product");
 const Order = require("../model/order");
 const Shop = require("../model/shop");
-const cloudinary = require("cloudinary");
+const cloudinary = require("cloudinary").v2;
 const ErrorHandler = require("../utils/ErrorHandler");
 
 // create product
@@ -29,7 +29,7 @@ router.post(
         const imagesLinks = [];
       
         for (let i = 0; i < images.length; i++) {
-          const result = await cloudinary.v2.uploader.upload(images[i], {
+          const result = await cloudinary.uploader.upload(images[i], {
             folder: "products",
           });
       
