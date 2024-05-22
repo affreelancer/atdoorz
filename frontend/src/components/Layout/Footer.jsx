@@ -36,9 +36,8 @@ const Footer = () => {
       </div>
       <div className="grid grid-cols-1 sm:gird-cols-3 lg:grid-cols-4 gap-6 sm:px-8 px-5 py-16 sm:text-center">
         <ul className="px-5 text-center sm:text-start flex sm:block flex-col items-center">
-          <img
-            src="https://i.ibb.co/J79mrG3/logo.png"
-            alt=""
+          <img className="w-30 h-10"
+            src="https://i.ibb.co/2PCd7Wh/logo.png"
             style={{ filter: "brightness(0) invert(1)" }}
           />
           <br />
@@ -110,11 +109,11 @@ const Footer = () => {
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10
          text-center pt-2 text-gray-400 text-sm pb-8"
       >
-        <span>© 2020 AT Doorz. All rights reserved.</span>
+        <span>&copy; 2024 | AT Doorz. All rights reserved.</span>
         <span>Terms · Privacy Policy</span>
         <div className="sm:block flex items-center justify-center w-full">
-          <img
-            src="https://hamart-shop.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Ffooter-payment.a37c49ac.png&w=640&q=75"
+          <img className="w-40 h-15"
+            src="https://i.ibb.co/z4HgxzH/payment-system.png"
             alt=""
           />
         </div>
