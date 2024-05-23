@@ -13,10 +13,10 @@ const HomePage = () => {
     <div>
         <Header activeHeading={1} />
         <Hero />
+        <FeaturedProduct />
         <Categories />
         <BestDeals />
         <Events />
-        <FeaturedProduct />
         <Sponsored />
         <Footer />
     </div>

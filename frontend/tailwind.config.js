@@ -13,7 +13,12 @@ module.exports = {
         "1100px": "1110px",
         "800px": "800px",
         "1300px": "1300px",
-        "400px":"400px"
+        "400px": "400px",
+      },
+      colors: {
+        fyporange: '#ff7f50',
+        fypgreen: '#32cd9a',
+
       },
     },
   },

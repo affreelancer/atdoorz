@@ -68,11 +68,11 @@ const ProductCard = ({ data,isEvent }) => {
           <img
             src={`${data.images && data.images[0]?.url}`}
             alt=""
-            className="w-full h-[170px] object-contain"
+            className="w-full h-[180px] object-contain"
           />
         </Link>
         <Link to={`/shop/preview/${data?.shop._id}`}>
-          <h5 className={`${styles.shop_name}`}>{data.shop.name}</h5>
+          <h5 className={`${styles.shop_name} text-fyporange font-medium`}>{data.shop.name}</h5>
         </Link>
         <Link to={`${isEvent === true ? `/product/${data._id}?isEvent=true` : `/product/${data._id}`}`}>
           <h4 className="pb-3 font-[500]">

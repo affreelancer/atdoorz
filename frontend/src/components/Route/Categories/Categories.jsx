@@ -13,7 +13,7 @@ const Categories = () => {
         >
           {brandingData &&
             brandingData.map((i, index) => (
-              <div className="flex items-start" key={index}>
+              <div className="flex items-center" key={index}>
                 {i.icon}
                 <div className="px-3">
                   <h3 className="font-bold text-sm md:text-base">{i.title}</h3>
@@ -21,6 +21,11 @@ const Categories = () => {
                 </div>
               </div>
             ))}
+        </div>
+      </div>
+      <div className={`${styles.section}`}>
+        <div className={`${styles.heading} text-fypgreen`}>
+          <h1>Our Categories</h1>
         </div>
       </div>
 
@@ -36,16 +41,16 @@ const Categories = () => {
               };
               return (
                 <div
-                  className="w-full h-[100px] flex items-center justify-between cursor-pointer overflow-hidden"
+                  className="w-full h-[100px] flex items-center justify-around cursor-pointer overflow-hidden hover:bg-slate-100 hover:rounded-md"
                   key={i.id}
                   onClick={() => handleSubmit(i)}
-                >
-                  <h5 className={`text-[18px] leading-[1.3]`}>{i.title}</h5>
-                  <img
+                ><img
                     src={i.image_Url}
-                    className="w-[120px] object-cover"
+                    className="w-[75px] object-contain "
                     alt=""
                   />
+                  <h5 className={`text-[18px] leading-[1.3] px-5`}>{i.title}</h5>
+
                 </div>
               );
             })}
