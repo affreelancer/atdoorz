@@ -97,11 +97,11 @@ const App = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/sign-up" element={<SignupPage />} />
         <Route
-          path="/activation/:activation_token"
+          path="user/activation/:activation_token"
           element={<ActivationPage />}
-        />
+        /> 
         <Route
-          path="/seller/activation/:activation_token"
+          path="/shop/activation/:activation_token"
           element={<SellerActivationPage />}
         />
         <Route path="/products" element={<ProductsPage />} />
@@ -319,7 +319,7 @@ const App = () => {
       </Routes>
       <ToastContainer
         position="bottom-center"
-        autoClose={5000}
+        autoClose={3000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick
