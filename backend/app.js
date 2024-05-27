@@ -48,8 +48,7 @@ app.use("/api/v2/event", event);
 app.use("/api/v2/coupon", coupon);
 app.use("/api/v2/payment", payment);
 app.use("/api/v2/withdraw", withdraw);
-app.use('/api', contact);
-
+app.use("/api/v2/contact", contact); 
 // it's for ErrorHandling
 app.use(ErrorHandler);
 

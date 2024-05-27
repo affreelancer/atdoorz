@@ -1,6 +1,9 @@
+// frontend/src/components/contact/ContactForm.jsx
 import React, { useState } from 'react';
 import axios from 'axios';
 import { FaPaperPlane } from 'react-icons/fa';
+import { server } from "../../server";
+import { toast } from 'react-toastify';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -20,10 +23,11 @@ const ContactForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('/api/contact', formData);
-      alert('Message sent successfully');
+      await axios.post(`${server}/contact`, formData); // Ensure this matches your backend route
+      toast.success('Message sent successfully'); 
       setFormData({ name: '', email: '', message: '' });
     } catch (error) {
+      toast.error('There was an error sending the message!');
       console.error('There was an error sending the message!', error);
     }
   };
