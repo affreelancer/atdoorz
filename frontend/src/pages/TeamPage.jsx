@@ -7,7 +7,7 @@ import Footer from "../components/Layout/Footer";
 
 const teamMembers = [
   {
-    name: "John Doe",
+    name: "Muhammad Abubakar Siddique",
     position: "Developer",
     image: "https://i.ibb.co/Nx5HHCT/atdoorz-fav.png",
     social: [
@@ -16,8 +16,8 @@ const teamMembers = [
     ],
   },
   {
-    name: "Jane Smith",
-    position: "Designer",
+    name: "Naila Shafique",
+    position: "Documentation",
     image: "https://i.ibb.co/Nx5HHCT/atdoorz-fav.png",
     social: [
       { name: "LinkedIn", url: "https://linkedin.com" },
@@ -25,8 +25,8 @@ const teamMembers = [
     ],
   },
   {
-    name: "Sam Wilson",
-    position: "Project Manager",
+    name: "Saud Ahmad",
+    position: "Graphic Designer",
     image: "https://i.ibb.co/Nx5HHCT/atdoorz-fav.png",
     social: [
       { name: "LinkedIn", url: "https://linkedin.com" },

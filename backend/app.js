@@ -37,6 +37,7 @@ const conversation = require("./routes/conversationRoutes");
 const message = require("./routes/messageRoutes");
 const withdraw = require("./routes/withdrawRoutes");
 const contact = require('./routes/contact');
+const newsletter = require('./routes/newsletter'); 
 
 app.use("/api/v2/user", user);
 app.use("/api/v2/conversation", conversation);
@@ -49,6 +50,7 @@ app.use("/api/v2/coupon", coupon);
 app.use("/api/v2/payment", payment);
 app.use("/api/v2/withdraw", withdraw);
 app.use("/api/v2/contact", contact); 
+app.use("/api/v2/newsletter", newsletter);
 // it's for ErrorHandling
 app.use(ErrorHandler);
 
