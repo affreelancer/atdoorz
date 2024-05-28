@@ -12,9 +12,7 @@ app.use(cors({
 
 app.use(express.json());
 app.use(cookieParser());
-app.use("/test", (req, res) => {
-  res.send("Hello world!");
-});
+
 
 app.use(bodyParser.urlencoded({ extended: true, limit: "100mb" }));
 
@@ -36,8 +34,10 @@ const order = require("./routes/orderRoutes");
 const conversation = require("./routes/conversationRoutes");
 const message = require("./routes/messageRoutes");
 const withdraw = require("./routes/withdrawRoutes");
+
 const contact = require('./routes/contact');
 const newsletter = require('./routes/newsletter'); 
+
 
 app.use("/api/v2/user", user);
 app.use("/api/v2/conversation", conversation);
@@ -54,4 +54,4 @@ app.use("/api/v2/newsletter", newsletter);
 // it's for ErrorHandling
 app.use(ErrorHandler);
 
-module.exports = app;
+module.exports = app; 

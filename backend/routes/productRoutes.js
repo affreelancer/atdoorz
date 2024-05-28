@@ -12,7 +12,7 @@ const {
 const router = express.Router();
 
 // Create product
-router.post("/create-product", createProduct);
+router.post("/create-product", isSeller, createProduct);
 
 // Get all products of a shop
 router.get("/get-all-products-shop/:id", getAllProductsOfShop);
