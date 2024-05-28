@@ -10,7 +10,7 @@ const {
 const router = express.Router();
 
 // Create event
-router.post("/create-event", isSeller, createEvent);
+router.post("/create-event", createEvent);
 
 // Get all events
 router.get("/get-all-events", getAllEvents);
