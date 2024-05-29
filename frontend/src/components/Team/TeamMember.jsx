@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaInstagram, FaFacebook } from 'react-icons/fa';
 
 const TeamMember = ({ name, position, image, social }) => {
   return (
@@ -15,8 +15,8 @@ const TeamMember = ({ name, position, image, social }) => {
             href={network.url}
             className="text-fypgreen flex items-center justify-center w-10 h-10 rounded-full bg-transparent hover:bg-fypgreen hover:text-white transition duration-300"
           >
-            {network.name === 'LinkedIn' && <FaLinkedin />}
-            {network.name === 'Twitter' && <FaTwitter />}
+            {network.name === 'LinkedIn' && <FaFacebook />}
+            {network.name === 'Twitter' && <FaInstagram />}
           </a>
         ))}
       </div>

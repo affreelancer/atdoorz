@@ -190,79 +190,91 @@ export const navItems = [
       ),
     },
   ];
-  
+  const web_url = "http://localhost:3000"
   // categories data
   export const categoriesData = [
     {
-      id: 1,
-      title: "Computers and Laptops",
-      subTitle: "",
-      image_Url:
-        "https://i.ibb.co/RNBGfCL/laptop.png",
+        id: 1,
+        title: "Computers and Laptops",
+        subTitle: "",
+        image_Url: "https://i.ibb.co/RNBGfCL/laptop.png",
+        bgimg_Url: "https://i.ibb.co/ZX9s9bq/computer.png",
+        link: `${web_url}/products?category=Computers%20and%20Laptops`,
     },
     {
-      id: 2,
-      title: "cosmetics and body care",
-      subTitle: "",
-      image_Url:
-        "https://i.ibb.co/n6gyyq1/cosmetics.png",
+        id: 2,
+        title: "Cosmetics and Body Care",
+        subTitle: "",
+        image_Url: "https://i.ibb.co/n6gyyq1/cosmetics.png",
+        bgimg_Url: "https://i.ibb.co/Npnzzvc/cosmetics.png",
+        link: `${web_url}/products?category=Cosmetics%20and%20Body%20Care`,
     },
     {
-      id: 3,
-      title: "Accesories",
-      subTitle: "",
-      image_Url:
-        "https://i.ibb.co/Bwr16Bd/accessories.png",
+        id: 3,
+        title: "Accessories",
+        subTitle: "",
+        image_Url: "https://i.ibb.co/Bwr16Bd/accessories.png",
+        bgimg_Url: "https://i.ibb.co/R7zSqLM/Accessories.png",
+        link: `${web_url}/products?category=Accessories`,
     },
     {
-      id: 4,
-      title: "Cloths",
-      subTitle: "",
-      image_Url:
-        "https://i.ibb.co/8gkwjf7/cloth.png",
+        id: 4,
+        title: "Clothes",
+        subTitle: "",
+        image_Url: "https://i.ibb.co/8gkwjf7/cloth.png",
+        bgimg_Url: "https://i.ibb.co/MCp3dC6/clothes-bg.png",
+        link: `${web_url}/products?category=Clothes`,
     },
     {
-      id: 5,
-      title: "Shoes",
-      subTitle: "",
-      image_Url:
-        "https://i.ibb.co/sW82PPF/Shoes.png",
+        id: 5,
+        title: "Shoes",
+        subTitle: "",
+        image_Url: "https://i.ibb.co/sW82PPF/Shoes.png",
+        bgimg_Url: "https://i.ibb.co/L5QqjS6/shoes-bg.png",
+        link: `${web_url}/products?category=Shoes`,
     },
     {
-      id: 6,
-      title: "Gifts",
-      subTitle: "",
-      image_Url:
-        "https://i.ibb.co/H7QDvN9/Gifts.png",
+        id: 6,
+        title: "Gifts",
+        subTitle: "",
+        image_Url: "https://i.ibb.co/H7QDvN9/Gifts.png",
+        bgimg_Url: "https://i.ibb.co/mqD0RGR/gifts-bg.png",
+        link: `${web_url}/products?category=Gifts`,
     },
     {
-      id: 7,
-      title: "Pet Care",
-      subTitle: "",
-      image_Url: "https://i.ibb.co/5Tsd4xV/Pet-Care.png",
+        id: 7,
+        title: "Pet Care",
+        subTitle: "",
+        image_Url: "https://i.ibb.co/5Tsd4xV/Pet-Care.png",
+        bgimg_Url: "https://i.ibb.co/4FJg3G8/pet-care-bg.png",
+        link: `${web_url}/products?category=Pet%20Care`,
     },
     {
-      id: 8,
-      title: "Mobile and Tablets",
-      subTitle: "",
-      image_Url:
-        "https://i.ibb.co/5c0fDpZ/phone.png",
+        id: 8,
+        title: "Mobile and Tablets",
+        subTitle: "",
+        image_Url: "https://i.ibb.co/5c0fDpZ/phone.png",
+        bgimg_Url: "https://i.ibb.co/zX0vL7D/mobile-tablets-bg.png",
+        link: `${web_url}/products?category=Mobile%20and%20Tablets`,
     },
     {
-      id: 9,
-      title: "Music and Gaming",
-      subTitle: "",
-      image_Url:
-        "https://i.ibb.co/F5ZRQdw/music.png",
+        id: 9,
+        title: "Music and Gaming",
+        subTitle: "",
+        image_Url: "https://i.ibb.co/F5ZRQdw/music.png",
+        bgimg_Url: "https://i.ibb.co/pfNdWqn/music-gaming-bg.png",
+        link: `${web_url}/products?category=Music%20and%20Gaming`,
     },
     {
-      id: 10,
-      title: "Others",
-      subTitle: "",
-      image_Url:
-        "https://i.ibb.co/Nx5HHCT/atdoorz-fav.png",
-    },
-  ];
+        id: 10,
+        title: "Home Appliances",
+        subTitle: "",
+        image_Url: "https://i.ibb.co/3zGzZRC/Home-Appliances.png",
+        bgimg_Url: "https://i.ibb.co/YZkCHzn/home-appliances-bg.png",
+        link: `${web_url}/products?category=Home%20Appliances`,
+    }
+];
+
   
   // product Data
   export const productData = [
