@@ -1,18 +1,18 @@
-import { React, useState } from "react";
+import React, { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
-import styles from "../../styles/styles";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { server } from "../../server";
 import { toast } from "react-toastify";
 import { RxAvatar } from "react-icons/rx";
+import styles from "../../styles/styles";
 
 const ShopCreate = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState();
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [address, setAddress] = useState("");
-  const [zipCode, setZipCode] = useState();
+  const [zipCode, setZipCode] = useState("");
   const [avatar, setAvatar] = useState();
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
@@ -35,10 +35,10 @@ const ShopCreate = () => {
         setName("");
         setEmail("");
         setPassword("");
-        setAvatar();
-        setZipCode();
+        setAvatar(null);
+        setZipCode("");
         setAddress("");
-        setPhoneNumber();
+        setPhoneNumber("");
       })
       .catch((error) => {
         console.log(error);
@@ -58,6 +58,10 @@ const ShopCreate = () => {
     reader.readAsDataURL(e.target.files[0]);
   };
 
+  const isEmailValid = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
       <div className="sm:mx-auto sm:w-full sm:max-w-md">
@@ -69,15 +73,12 @@ const ShopCreate = () => {
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
                 Shop Name
               </label>
               <div className="mt-1">
                 <input
-                  type="name"
+                  type="text"
                   name="name"
                   required
                   value={name}
@@ -88,10 +89,7 @@ const ShopCreate = () => {
             </div>
 
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="phone-number" className="block text-sm font-medium text-gray-700">
                 Phone Number
               </label>
               <div className="mt-1">
@@ -99,6 +97,7 @@ const ShopCreate = () => {
                   type="number"
                   name="phone-number"
                   required
+                  disabled={!name}
                   value={phoneNumber}
                   onChange={(e) => setPhoneNumber(e.target.value)}
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
@@ -107,10 +106,7 @@ const ShopCreate = () => {
             </div>
 
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700">
                 Email address
               </label>
               <div className="mt-1">
@@ -119,6 +115,7 @@ const ShopCreate = () => {
                   name="email"
                   autoComplete="email"
                   required
+                  disabled={!phoneNumber}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
@@ -127,17 +124,15 @@ const ShopCreate = () => {
             </div>
 
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="address" className="block text-sm font-medium text-gray-700">
                 Address
               </label>
               <div className="mt-1">
                 <input
-                  type="address"
+                  type="text"
                   name="address"
                   required
+                  disabled={!isEmailValid(email)}
                   value={address}
                   onChange={(e) => setAddress(e.target.value)}
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
@@ -146,10 +141,7 @@ const ShopCreate = () => {
             </div>
 
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="zipcode" className="block text-sm font-medium text-gray-700">
                 Zip Code
               </label>
               <div className="mt-1">
@@ -157,6 +149,7 @@ const ShopCreate = () => {
                   type="number"
                   name="zipcode"
                   required
+                  disabled={!address}
                   value={zipCode}
                   onChange={(e) => setZipCode(e.target.value)}
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
@@ -165,10 +158,7 @@ const ShopCreate = () => {
             </div>
 
             <div>
-              <label
-                htmlFor="password"
-                className="block text-sm font-medium text-gray-700"
-              >
+              <label htmlFor="password" className="block text-sm font-medium text-gray-700">
                 Password
               </label>
               <div className="mt-1 relative">
@@ -177,6 +167,7 @@ const ShopCreate = () => {
                   name="password"
                   autoComplete="current-password"
                   required
+                  disabled={!zipCode}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
@@ -198,10 +189,7 @@ const ShopCreate = () => {
             </div>
 
             <div>
-              <label
-                htmlFor="avatar"
-                className="block text-sm font-medium text-gray-700"
-              ></label>
+              <label htmlFor="avatar" className="block text-sm font-medium text-gray-700"></label>
               <div className="mt-2 flex items-center">
                 <span className="inline-block h-8 w-8 rounded-full overflow-hidden">
                   {avatar ? (
@@ -224,6 +212,7 @@ const ShopCreate = () => {
                     name="avatar"
                     id="file-input"
                     onChange={handleFileInputChange}
+                    disabled={!password}
                     className="sr-only"
                   />
                 </label>
@@ -234,6 +223,7 @@ const ShopCreate = () => {
               <button
                 type="submit"
                 className="group relative w-full h-[40px] flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+                disabled={!avatar}
               >
                 Submit
               </button>

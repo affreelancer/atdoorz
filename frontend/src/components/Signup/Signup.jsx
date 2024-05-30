@@ -7,12 +7,15 @@ import axios from "axios";
 import { server } from "../../server";
 import { toast } from "react-toastify";
 
-const Singup = () => {
+const Signup = () => {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [visible, setVisible] = useState(false);
   const [avatar, setAvatar] = useState(null);
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
 
   const handleFileInputChange = (e) => {
     const reader = new FileReader();
@@ -35,11 +38,37 @@ const Singup = () => {
         setName("");
         setEmail("");
         setPassword("");
-        setAvatar();
+        setAvatar(null);
       })
       .catch((error) => {
         toast.error(error.response.data.message);
       });
+  };
+
+  const handleNameChange = (e) => {
+    const value = e.target.value;
+    setName(value);
+    if (/[^a-zA-Z\s]/.test(value)) {
+      setNameError("Name should contain only letters and spaces.");
+    } else {
+      setNameError("");
+    }
+  };
+
+  const handleEmailFocus = () => {
+    if (!name || nameError) {
+      setEmailError("Name field is required before entering an email.");
+    } else {
+      setEmailError("");
+    }
+  };
+
+  const handlePasswordFocus = () => {
+    if (!name || nameError) {
+      setPasswordError("Name field is required before entering a password.");
+    } else {
+      setPasswordError("");
+    }
   };
 
   return (
@@ -54,7 +83,7 @@ const Singup = () => {
           <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label
-                htmlFor="email"
+                htmlFor="name"
                 className="block text-sm font-medium text-gray-700"
               >
                 Full Name
@@ -62,14 +91,19 @@ const Singup = () => {
               <div className="mt-1">
                 <input
                   type="text"
-                  name="text"
+                  name="name"
                   autoComplete="name"
                   required
                   value={name}
-                  onChange={(e) => setName(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  onChange={handleNameChange}
+                  className={`appearance-none block w-full px-3 py-2 border ${
+                    nameError ? "border-red-500" : "border-gray-300"
+                  } rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
                 />
               </div>
+              {nameError && (
+                <p className="mt-2 text-sm text-red-600">{nameError}</p>
+              )}
             </div>
 
             <div>
@@ -85,11 +119,18 @@ const Singup = () => {
                   name="email"
                   autoComplete="email"
                   required
+                  disabled={!name || nameError}
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
+                  onFocus={handleEmailFocus}
+                  className={`appearance-none block w-full px-3 py-2 border ${
+                    emailError ? "border-red-500" : "border-gray-300"
+                  } rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm`}
                 />
               </div>
+              {emailError && (
+                <p className="mt-2 text-sm text-red-600">{emailError}</p>
+              )}
             </div>
 
             <div>
@@ -105,8 +146,10 @@ const Singup = () => {
                   name="password"
                   autoComplete="current-password"
                   required
+                  disabled={!name || nameError}
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
+                  onFocus={handlePasswordFocus}
                   className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                 />
                 {visible ? (
@@ -123,6 +166,9 @@ const Singup = () => {
                   />
                 )}
               </div>
+              {passwordError && (
+                <p className="mt-2 text-sm text-red-600">{passwordError}</p>
+              )}
             </div>
 
             <div>
@@ -180,4 +226,4 @@ const Singup = () => {
   );
 };
 
-export default Singup;
+export default Signup;
