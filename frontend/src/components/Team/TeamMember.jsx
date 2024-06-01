@@ -15,8 +15,8 @@ const TeamMember = ({ name, position, image, social }) => {
             href={network.url}
             className="text-fypgreen flex items-center justify-center w-10 h-10 rounded-full bg-transparent hover:bg-fypgreen hover:text-white transition duration-300"
           >
-            {network.name === 'LinkedIn' && <FaFacebook />}
-            {network.name === 'Twitter' && <FaInstagram />}
+            {network.name === 'Facebook' && <FaFacebook />}
+            {network.name === 'Instagram' && <FaInstagram />}
           </a>
         ))}
       </div>

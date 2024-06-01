@@ -19,6 +19,7 @@ import TrackOrderPage from "../pages/TrackOrderPage";
 import UserInbox from "../pages/UserInbox.jsx";
 import TeamPage from "../pages/TeamPage.jsx";
 import ContactUs from "../pages/ContactUs.jsx";
+import AboutUs from "../pages/AboutUs.jsx";
 
 export { 
     LoginPage,
@@ -42,4 +43,5 @@ export {
     UserInbox,
     TeamPage,
     ContactUs,
+    AboutUs,
 };

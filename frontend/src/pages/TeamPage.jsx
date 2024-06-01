@@ -9,28 +9,28 @@ const teamMembers = [
   {
     name: "Muhammad Abubakar Siddique",
     position: "Developer",
-    image: "https://i.ibb.co/Nx5HHCT/atdoorz-fav.png",
+    image: "https://i.ibb.co/6DmtbhR/abubakar.jpg",
     social: [
-      { name: "LinkedIn", url: "https://linkedin.com" },
-      { name: "Twitter", url: "https://twitter.com" },
+      { name: "Facebook", url: "https://www.facebook.com/fb.abubakkar" },
+      { name: "Instagram", url: "https://www.instagram.com/ig_bakkar/" },
     ],
   },
   {
     name: "Naila Shafique",
     position: "Documentation",
-    image: "https://i.ibb.co/Nx5HHCT/atdoorz-fav.png",
+    image: "https://i.ibb.co/BgShYbF/naila.webp",
     social: [
-      { name: "LinkedIn", url: "https://linkedin.com" },
-      { name: "Twitter", url: "https://twitter.com" },
+      { name: "Facebook", url: "https://linkedin.com" },
+      { name: "Instagram", url: "https://twitter.com" },
     ],
   },
   {
     name: "Saud Ahmad",
     position: "Graphic Designer",
-    image: "https://i.ibb.co/Nx5HHCT/atdoorz-fav.png",
+    image: "https://i.ibb.co/nCqwB6K/saud.png",
     social: [
-      { name: "LinkedIn", url: "https://linkedin.com" },
-      { name: "Twitter", url: "https://twitter.com" },
+      { name: "Facebook", url: "https://linkedin.com" },
+      { name: "Instagram", url: "https://twitter.com" },
     ],
   },
 ];

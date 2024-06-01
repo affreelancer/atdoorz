@@ -610,7 +610,7 @@ export const navItems = [
   export const footerProductLinks = [
     {
       name: "About us",
-      link: "/about"
+      link: "/about-us"
     },
     {
       name: "Careers",
