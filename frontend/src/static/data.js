@@ -614,7 +614,6 @@ export const navItems = [
     },
     {
       name: "Careers",
-      link: "/carrers"
     },
     {
       name: "Store Locations",
@@ -629,7 +628,8 @@ export const navItems = [
   
   export const footercompanyLinks = [
     {
-      name: "Game & Video",
+      name: "Computer & Accessories",
+      link: "/products?category=Computers%20and%20Laptops"
     },
     {
       name: "Phone &Tablets",

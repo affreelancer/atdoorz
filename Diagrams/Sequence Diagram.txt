@@ -1,0 +1,189 @@
+@startuml
+
+title Activity Diagram for @doorz Multi-Vendor Platform
+
+start
+
+:User Registration;
+-> Open registration page;
+-> Display registration form;
+-> Enter details (name, email, password);
+-> Store user details in the database;
+-> Send activation email;
+-> Click activation link;
+-> Update user status to activated in database;
+:Account activated;
+stop
+
+:User Login;
+-> Open login page;
+-> Display login form;
+-> Enter email and password;
+-> Validate credentials with database;
+-> Redirect to homepage;
+:Homepage displayed;
+stop
+
+:Product Browsing;
+-> Open homepage;
+-> Retrieve product list from database;
+-> Display products list;
+-> Filter/search products;
+-> Retrieve filtered products from database;
+-> Display filtered results;
+:Products displayed;
+stop
+
+:Add Products to Cart;
+-> Select product;
+-> Add product to cart;
+-> Update cart status in database;
+:Cart updated;
+stop
+
+:Checkout Process;
+-> Open cart page;
+-> Display cart contents;
+-> Proceed to checkout;
+-> Display checkout steps;
+-> Enter shipping details;
+-> Choose payment method;
+-> Process payment;
+-> Confirm payment;
+-> Store order details in database;
+:Order successful;
+stop
+
+:Profile Management;
+-> Open profile page;
+-> Display profile details;
+-> Update profile information;
+-> Update profile details in database;
+:Profile updated;
+stop
+
+:Wishlist Management;
+-> Add product to wishlist;
+-> Update wishlist in database;
+-> View wishlist;
+:Wishlist displayed;
+stop
+
+:Order Tracking;
+-> View order history;
+-> Retrieve order history from database;
+-> Display order history;
+-> Track specific order;
+-> Retrieve tracking details from database;
+:Tracking details displayed;
+stop
+
+:Seller Registration;
+-> Open seller registration page;
+-> Display registration form;
+-> Enter shop details (name, email, phone number, address, password, logo);
+-> Store seller details in database;
+-> Send activation email;
+-> Click activation link;
+-> Update seller status to activated in database;
+:Seller account activated;
+stop
+
+:Seller Login;
+-> Open login page;
+-> Display login form;
+-> Enter email and password;
+-> Validate credentials with database;
+-> Redirect to seller dashboard;
+:Seller dashboard displayed;
+stop
+
+:Product Management by Seller;
+-> Open product management page;
+-> Display product management options;
+-> Add new product;
+-> Store product details in database;
+-> Update existing product;
+-> Update product details in database;
+-> Delete product;
+-> Remove product details from database;
+:Product management completed;
+stop
+
+:Event Management by Seller;
+-> Open event management page;
+-> Display event management options;
+-> Create new event;
+-> Store event details in database;
+-> Update existing event;
+-> Update event details in database;
+-> Delete event;
+-> Remove event details from database;
+:Event management completed;
+stop
+
+:Order Management by Seller;
+-> View orders;
+-> Retrieve order details from database;
+-> Display order details;
+-> Update order status (e.g., shipped, delivered);
+-> Update order status in database;
+:Order management completed;
+stop
+
+:Withdraw Management by Seller;
+-> Request withdrawal;
+-> Store withdrawal request in database;
+-> Approve/Disapprove withdrawal request;
+-> Update withdrawal request status in database;
+:Withdrawal request processed;
+stop
+
+:Admin Management;
+-> Login to admin panel;
+-> Display admin dashboard;
+
+fork
+  -> View all earnings;
+  -> Retrieve earnings details from database;
+  -> Display earnings details;
+end fork
+
+fork
+  -> View all events;
+  -> Retrieve events details from database;
+  -> Display events details;
+end fork
+
+fork
+  -> View all products;
+  -> Retrieve products details from database;
+  -> Display products details;
+end fork
+
+fork
+  -> View all sellers;
+  -> Retrieve sellers details from database;
+  -> Display sellers details;
+end fork
+
+fork
+  -> View all users;
+  -> Retrieve users details from database;
+  -> Display users details;
+end fork
+
+fork
+  -> View withdrawal requests;
+  -> Retrieve withdrawal requests from database;
+  -> Display withdrawal requests;
+  -> Approve/Disapprove withdrawal request;
+  -> Update withdrawal request status in database;
+end fork
+
+-> Manage users, products, orders, and sellers;
+-> Update management changes in database;
+:Admin management completed;
+stop
+
+@enduml

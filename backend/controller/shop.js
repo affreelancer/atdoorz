@@ -53,7 +53,7 @@ exports.createShop = catchAsyncErrors(async (req, res, next) => {
 // Create activation token
 const createActivationToken = (seller) => {
     return jwt.sign(seller, process.env.ACTIVATION_SECRET, {
-        expiresIn: "7d",
+        expiresIn: "10m",
     });
 };
 
