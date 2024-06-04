@@ -13,8 +13,8 @@ const HomePage = () => {
     <div>
         <Header activeHeading={1} />
         <Hero />
-        <FeaturedProduct />
         <Categories />
+        <FeaturedProduct />
         <BestDeals />
         <Events />
         <Sponsored />

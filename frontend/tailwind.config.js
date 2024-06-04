@@ -16,7 +16,7 @@ module.exports = {
         "400px": "400px",
       },
       colors: {
-        fyporange: '#ff7f50',
+        fyporange: '#ff7f56',
         fypgreen: '#32cd9a',
 
       },

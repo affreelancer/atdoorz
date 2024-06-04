@@ -9,9 +9,9 @@ const Sponsored = () => {
       <div className="flex justify-between w-full">
         <div className="flex items-start">
           <img
-            src="https://i.ibb.co/RD1ZCc0/logo-01.png"
+            src="https://i.ibb.co/Nx5HHCT/atdoorz-fav.png"
             alt=""
-            style={{width:"150px", objectFit:"contain"}}
+            style={{width:"80px", objectFit:"contain"}}
           />
         </div>
         <div className="flex items-start">
